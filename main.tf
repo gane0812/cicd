@@ -33,4 +33,5 @@ resource "azurerm_resource_group" "rg" {
   
 }
 # Terraform applied using Dev variables , then I applied using Prod variables, so it started to destory and recreate
-# 
+# I added backend for tf state , created yml file which will be triggered on push to master and it tf applies using prod.terraform.tfvars file
+#
