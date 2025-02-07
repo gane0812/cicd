@@ -5,8 +5,8 @@ on:
     branches:
       - master
 permissions:
- id-token: write  # Enables OIDC authentication
- contents: read
+  id-token: write  # Enables OIDC authentication
+  contents: read
 
 jobs:
   deploy:
