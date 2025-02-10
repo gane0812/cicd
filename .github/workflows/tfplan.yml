@@ -48,4 +48,4 @@ jobs:
                          -backend-config="key=terraform.tfstate"
 
       - name: Terraform Plan
-        run: terraform plan
+        run: terraform plan -var-file="prod/terraform.tfvars"
