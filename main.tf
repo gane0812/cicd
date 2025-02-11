@@ -16,6 +16,9 @@ provider "azurerm" {
   }
   subscription_id = "d142c4c7-733e-4ee6-9bb4-bcbe829e13c2"
 }
+terraform {
+ backend "local" {}
+}
 #
 
 variable "name" {
