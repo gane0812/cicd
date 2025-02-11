@@ -31,12 +31,11 @@ jobs:
 
     - name: Terraform Init
       run: | 
-        terraform init -backend-config="resource_group_name=rg" \
-                       -backend-config="storage_account_name=${{secrets.AZURE_STORAGE}}" \
-                       -backend-config="container_name=${{secrets.AZURE_STORAGE_CONTAINER_NAME}}" \
-                       -backend-config="key=prod.terraform.tfstate" \
-                       -backend-config="access_key=${{secrets.AZURE_STORAGE_KEY}}"
-   
+         terraform init \
+                           -backend-config="storage_account_name=${{ secrets.AZURE_STORAGE}}" \
+                           -backend-config="container_name=cicd" \
+                           -backend-config="key=prod.terraform.tfstate" \
+                           -backend-config="access_key=${{ secrets.AZURE_STORAGE_KEY }}"   
     - name: Terraform Plan 
       run: terraform plan -var-file="prod/terraform.tfvars"
 
